@@ -14,5 +14,7 @@ public class C01Variable {
 		double d = 0.0;
 		
 		String str = "";
+		
+		
 	}
 }
