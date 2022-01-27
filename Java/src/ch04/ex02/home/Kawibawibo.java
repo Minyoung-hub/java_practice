@@ -5,12 +5,11 @@ import java.util.Scanner;
 public class Kawibawibo {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		ResultStr resultStr = new ResultStr();
 		int com = (int)(Math.random()*3)+1;
 		int me = 0;
 		int result = 0;
 		String guide = "";
-		String comStr = "";
-		String meStr = "";
 		while(me < 1 || me > 3) {
 			System.out.print("가위 바위 보를 합니다. 무엇을 내시겠습니까? 1.가위 2.바위 3.보 >> ");
 			me = sc.nextInt();
@@ -30,32 +29,36 @@ public class Kawibawibo {
 		default:
 			guide = "오류입니다. 다시 시작해주세요. ";
 		}
-		switch(com) {
-		case 1:
-			comStr = "가위";
-			break;
-		case 2:
-			comStr = "바위";
-			break;
-		case 3:
-			comStr = "보";
-			break;
-		default:
-			comStr = "오류";
-		}
-		switch(me) {
-		case 1:
-			meStr = "가위";
-			break;
-		case 2:
-			meStr = "바위";
-			break;
-		case 3:
-			meStr = "보";
-			break;
-		default:
-			meStr = "오류";
-		}
+		resultStr.setResultStr(com);
+		String comStr = resultStr.getResultStr();
+		resultStr.setResultStr(me);
+		String meStr = resultStr.getResultStr();
+//		switch(com) {
+//		case 1:
+//			comStr = "가위";
+//			break;
+//		case 2:
+//			comStr = "바위";
+//			break;
+//		case 3:
+//			comStr = "보";
+//			break;
+//		default:
+//			comStr = "오류";
+//		}
+//		switch(me) {
+//		case 1:
+//			meStr = "가위";
+//			break;
+//		case 2:
+//			meStr = "바위";
+//			break;
+//		case 3:
+//			meStr = "보";
+//			break;
+//		default:
+//			meStr = "오류";
+//		}
 		System.out.printf("당신은 %s, 컴퓨터는 %s, %s", meStr, comStr, guide);
 		
 		sc.close();
